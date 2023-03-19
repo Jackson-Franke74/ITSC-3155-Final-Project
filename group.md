@@ -5,11 +5,10 @@
 - **Github Username:** TheElegantFrisbee
 - **Niner Net ID:** jfranke5
 
-## John Doe
+## Anushrut N
 
-- **Github Username:** jdoe1
-- **Niner Net ID:** jdoe1
-- **Role:** Developer
+- **Github Username:** AnushrutN
+- **Niner Net ID:** 801259145
 
 ## Tim H
 
