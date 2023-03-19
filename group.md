@@ -1,9 +1,9 @@
 # Group Members
 
-## Jane Doe
+## Jackson Franke
 
-- **Github Username:** jdoe
-- **Niner Net ID:** jdoe
+- **Github Username:** TheElegantFrisbee
+- **Niner Net ID:** 801246547
 
 ## John Doe
 
