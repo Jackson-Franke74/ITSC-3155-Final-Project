@@ -16,10 +16,10 @@
 - **Github Username:** electric-sun-20
 - **Niner Net ID:** theideck
 
-## Greg T
+## Justin Mendoza
 
-- **Github Username:** vvile-film-archives
-- **Niner Net ID:** gturk
+- **Github Username:** Jmendo10
+- **Niner Net ID:** 801137373
 
 ## Neel Dadhania
 
