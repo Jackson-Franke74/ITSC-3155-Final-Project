@@ -10,11 +10,6 @@
 - **Github Username:** AnushrutN
 - **Niner Net ID:** 801259145
 
-## Tim H
-
-- **Github Username:** electric-sun-20
-- **Niner Net ID:** theideck
-
 ## Justin Mendoza
 
 - **Github Username:** Jmendo10
