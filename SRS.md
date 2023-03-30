@@ -21,7 +21,8 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.1 | 03/26/23 | Initial upload | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
 | 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
-| 1.4 | 03/30/23 | Constrains, User Stories, and Glossary updated.| [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
+| 1.4 | 03/30/23 | Constraints, UC 5-6, US 5-6. glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -43,7 +44,6 @@ Each group member must supply at least three functional requirements for the pro
   * **Description:** The program will be able to create rooms for the user to be able to play with friends
   * **Type:**  `Functional`
   * **Priority:** 1
-  * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
   * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top priority.
   * **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
 * **REQ-2: Different rooms with different categories**
@@ -76,7 +76,6 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 1
   * **Rationale:** A mode for users to initiate in the trivia bot 
   * **Testing:** Whether or not users can answer presented questions freely in this specific mode. 
-
 * **REQ-10**: Hint System
   * **Description**: A system that asks user if they need help after having tried a question a certain number of times.
   *  **Type**: Functional
