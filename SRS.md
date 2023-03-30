@@ -20,6 +20,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
 | 1.1 | 03/26/23 | Initial upload | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
+| 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 
 ## Table of Contents
 
@@ -37,6 +38,7 @@ We will be building a multiplayer Trivia bot with a wide range of features. This
 ## Requirements
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
+
 * **REQ-1: Multiplayer**
   * **Description:** The program will be able to create rooms for the user to be able to play with friends
   * **Type:**  Functional
@@ -55,6 +57,24 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 3
   * **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
   * **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
+  * **REQ-4:**
+  * **Description:** A timed mode where it gives you questions and you have to answer within a certain time limit
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** This requirement is a necessary need for the purpose of the Trivia bot.
+  * **Testing:** Wether or not a timed countdown will be initiated.
+* **REQ-5:**
+  * **Description:** A presentable multiple choice mode
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** The system will present a multiple choice format for the questions purpose.
+  * **Testing:** Whether or not a series of answers will show up or not.
+* **REQ-6:**
+  * **Description:** A free response mode for open ended questions
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** A mode for users to initiate in the trivia bot 
+  * **Testing:** Whether or not users can answer presented questions freely in this specific mode. 
 
 * **REQ-10**: Hint System
 * **Description**: A system that asks user if they need help after having tried a question a certain number of times.
@@ -77,12 +97,13 @@ Each group member must supply at least three functional requirements for the pro
 *  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
 *  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
 
-
 ## Constraints
 
 In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
 
-* **Neel**: The questions for the game will be pulled form an online database, whos API will have to be implimented in the project for smooth operations. Secondly the project template is of an online store, while we plan on making a trevia bot. We will have to make many changes to the templet to allow us to create such a bot.
+* **Neel**: The questions for the game will be pulled form an online database, who's API will have to be implemented in the project for smooth operations. Secondly the project template is of an online store, while we plan on making a trivia bot. We will have to make many changes to the template to allow us to create such a bot.
+
+* **Justin**: With our Trivia bot we must enforce formatting as this can be subject of hindering results of the game. Another constraint can be debating which of our features will be completed at each phase. Time and bot input will be a dictating factor on this.
 
 
 ## Use Cases
@@ -95,14 +116,14 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
   * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
 
-* **UC-7**: Competative play
-*  **Description**: User can decide to play competatively by not using the hint feature, thus making sure they are not hit with a point panelty when using the hint feature for the hint feature. The compatetive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
+* **UC-7**: Competitive play
+*  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
 *  **Actors**: User
-*  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for thier score to appear on the leader board.
+*  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
 *  **Postconditions**: The score, if applicable, must appear on the leader board
 
 * **UC-8**: Locally playing with friends and family
-*  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competatively amoung the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
+*  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
 *  **Actors**: Users
 *  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
 *  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
