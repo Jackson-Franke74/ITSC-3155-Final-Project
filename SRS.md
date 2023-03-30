@@ -129,13 +129,24 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** User needs to be logged in to be able to create their own set of questions
   * **Postconditions:** The questions and answers need to show up like any other trivia question would in a specific category.
 
-* **UC-7**: Competitive play
+* **US-3** Multiplayer game
+* **Description:** A user wants to play with their friend on the other side of town, so they send a code to their friend, and they both join the same game (like a kahoot)
+* **Actors:** Users
+* **Preconditions:** Both users must have accounts, and a game room must be made so they can join and play together in a coordinated effort
+* **Postconditions:** Scores must be displayed for both users, and a winner declared. 
+
+* **US-4** Score share
+* **Description:** User wants to go back through the game and show a friend their score, without having to play the entire game again. They log in, and their high score appears.
+* **Preconditions** User must have an account and have played the game at least once before
+* **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
+
+* **UC-5**: Competitive play
 *  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
 *  **Actors**: User
 *  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
 *  **Postconditions**: The score, if applicable, must appear on the leader board
 
-* **UC-8**: Locally playing with friends and family
+* **UC-6**: Locally playing with friends and family
 *  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
 *  **Actors**: Users
 *  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
