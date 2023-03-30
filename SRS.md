@@ -21,7 +21,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.1 | 03/26/23 | Initial upload | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
 | 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
-
+| 1.4 | 03/30/23 | Constrains, User Stories, and Glossary updated.| [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -41,19 +41,19 @@ Each group member must supply at least three functional requirements for the pro
 
 * **REQ-1: Multiplayer**
   * **Description:** The program will be able to create rooms for the user to be able to play with friends
-  * **Type:**  Functional
+  * **Type:**  `Functional`
   * **Priority:** 1
   * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
   * **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
 * **REQ-2: Different rooms with different categories**
   * **Description:** Our project needs to have different rooms where there will be different categories of trivia questions
-  * **Type:** Functional
+  * **Type:** `Functional`
   * **Priority:** 3
   * **Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
   * **Testing:** We can test this by advancing to another room and see different questions.
 * **REQ-3: Leaderboards**
   * **Description:** A leaderboard feature to add some friendly competition to the mix
-  * **Type:** Functional
+  * **Type:** `Functional`
   * **Priority:** 3
   * **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
   * **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
@@ -105,16 +105,40 @@ In this section, you should list any constraints that you have for the project. 
 
 * **Justin**: With our Trivia bot we must enforce formatting as this can be subject of hindering results of the game. Another constraint can be debating which of our features will be completed at each phase. Time and bot input will be a dictating factor on this.
 
+* **Anush:** 
+  * **Constrain 1:** Something that we might have to deal with is the possibility that the questions might be a little too obtuse or difficult for the players. This might be solved with the hint system.
+
+  * **Constrain 2:** The bot might not be able to recognise the answers given for the free response questions by the users. This might be solved by formatting it before feeding it to the bot to be checked. 
+
 
 ## Use Cases
 
 In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
 
-* **ID:** A unique identifier for the use case. This should be a number that is unique across the entire document (something like UC-1, UC-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A description of the use case that gives the user a high-level overview of how the system is interacted with.
-  * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
-  * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
-  * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
+* **UC-1** Pass-time 
+  * **Description:** A user might just want to pass some time by challenging themselves and playing alone. They might choose different categories to do themselves and add their score to the leaderboard.
+  * **Actors**: User
+  * **Preconditions:** User needs to be logged in.
+  * **Postconditions:** The score needs to be shown in the leaderboard. 
+
+* **UC-2** Review
+  * **Description** A user might use the feature to create your their own set of answers and questions to review for an upcoming test or to study for the final exams
+  * **Actors:** User
+  * **Preconditions:** User needs to be logged in to be able to create their own set of questions
+  * **Postconditions:** The questions and answers need to show up like any other trivia question would in a specific category.
+
+* **UC-7**: Competitive play
+*  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
+*  **Actors**: User
+*  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
+*  **Postconditions**: The score, if applicable, must appear on the leader board
+
+* **UC-8**: Locally playing with friends and family
+*  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
+*  **Actors**: Users
+*  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
+*  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
+
 
 * **UC-7**: Competitive play
 *  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
@@ -133,9 +157,22 @@ In this section, you should list use cases for the project. Use cases are a thor
 
 In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
 
-* **ID:** A unique identifier for the user story. This should be a number that is unique across the entire document (something like US-1, US-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
-  * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
+* **US-1**
+  * **Type of user:** Player
+  * **Description:** Trying to challenge themselves, the player started a session to see how well they do in a category that they don't have too much experiece in.
+
+* **US-2**
+  * **Type of user:** Player
+  * **Description:** A parent, planning a fun night with their kids might select or make their own category to challenge other family members. 
+
+* **US-7**:
+*  **Type of User**: Player
+*  **Description**: After answering a question for three times without getting it right, the player is provided access to the hint button which gives a hint, helping the player answer the question. Using the hint button does have a point panelty which is deducted from your total score.
+
+* **US-8**:
+*  **Type of Users**: Players
+*  **Description**: A group of players can join a local game in which the questions and thier answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
+
 
 * **US-7**:
 *  **Type of User**: Player
@@ -150,8 +187,8 @@ In this section, you should list user stories for the project. User stories are 
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
-* **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
-  * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
-
 * **Player**:
 *  **Definition**: The user playing the game
+
+* **Category:**
+  * **Description:** The different pages with different themed trivia questions.
