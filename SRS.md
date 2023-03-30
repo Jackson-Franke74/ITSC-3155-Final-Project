@@ -36,22 +36,25 @@ We will be building a multiplayer Trivia bot with a wide range of features. This
 ## Requirements
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
-
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement. Do not replace the word `Description` with the actual description. Put the description in the space where these instructions are written. Maintain that practice for all future sections.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-
 * **REQ-1: Multiplayer**
-  **Description:** The program will be able to create rooms for the user to be able to play woth  
+  **Description:** The program will be able to create rooms for the user to be able to play with friends
+  **Type:**  Functional
+  **Priority:** 1
+  **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
+  **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
+* **REQ-2: Different rooms with different categories**
+  **Description:** Our project needs to have different rooms where there will be different categories of trivia questions
+  **Type:** Functional
+  **Priority:** 3
+  **Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
+  **Testing:** We can test this by advancing to another room and see different questions.
+
+* **REQ-3: Leaderboards**
+  **Description:** A leaderboard feature to add some friendly competition to the mix
+  **Type:** Functional
+  **Priority:** 3
+  **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
+  **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
 
 ## Constraints
 
