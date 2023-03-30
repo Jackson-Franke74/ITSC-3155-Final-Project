@@ -37,7 +37,7 @@ We will be building a multiplayer Trivia bot with a wide range of features. This
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
 * **REQ-1: Multiplayer**
-  ***Description:** The program will be able to create rooms for the user to be able to play with friends
+* **Description:** The program will be able to create rooms for the user to be able to play with friends
   ***Type:**  Functional
   ***Priority:** 1
   ***Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
