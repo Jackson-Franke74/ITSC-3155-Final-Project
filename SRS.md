@@ -57,7 +57,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 3
   * **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
   * **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
-  * **REQ-4:**
+* **REQ-4:**
   * **Description:** A timed mode where it gives you questions and you have to answer within a certain time limit
   * **Type:** `Functional`
   * **Priority:** 1
