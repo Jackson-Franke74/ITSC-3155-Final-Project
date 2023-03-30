@@ -49,7 +49,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 1
   * **Rationale:** The system will present a multiple choice format for the questions purpose.
   * **Testing:** Whether or not a series of answers will show up or not.
-*  * **REQ-6:**
+* **REQ-6:**
   * **Description:** A free response mode for open ended questions
   * **Type:** `Functional`
   * **Priority:** 1
