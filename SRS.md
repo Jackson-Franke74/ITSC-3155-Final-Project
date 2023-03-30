@@ -31,7 +31,7 @@ When a change is made to the document, a new revision should be created. The rev
 
 ## Introduction
 
-In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section.
+We will be building a multiplayer Trivia bot with a wide range of features. This will include rooms, leaderboards, difficulty levels, and many more. This can used with individuals seeking ways to study, or even initiate a friendly competition
 
 ## Requirements
 
