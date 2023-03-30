@@ -37,23 +37,23 @@ We will be building a multiplayer Trivia bot with a wide range of features. This
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
 * **REQ-1: Multiplayer**
-* **Description:** The program will be able to create rooms for the user to be able to play with friends
-  ***Type:**  Functional
-  ***Priority:** 1
-  ***Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
-  ***Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
+  * **Description:** The program will be able to create rooms for the user to be able to play with friends
+  * **Type:**  Functional
+  * **Priority:** 1
+  * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
+  * **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
 * **REQ-2: Different rooms with different categories**
-  ***Description:** Our project needs to have different rooms where there will be different categories of trivia questions
-  ***Type:** Functional
-  ***Priority:** 3
-  ***Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
-  ***Testing:** We can test this by advancing to another room and see different questions.
+  * ***Description:** Our project needs to have different rooms where there will be different categories of trivia questions
+  * ***Type:** Functional
+  * ***Priority:** 3
+  * ***Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
+  * ***Testing:** We can test this by advancing to another room and see different questions.
 * **REQ-3: Leaderboards**
-  ***Description:** A leaderboard feature to add some friendly competition to the mix
-  ***Type:** Functional
-  ***Priority:** 3
-  ***Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
-  ***Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
+  * ***Description:** A leaderboard feature to add some friendly competition to the mix
+  * ***Type:** Functional
+  * ***Priority:** 3
+  * ***Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
+  * ***Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
 
 ## Constraints
 
