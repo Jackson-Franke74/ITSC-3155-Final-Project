@@ -44,6 +44,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Type:**  `Functional`
   * **Priority:** 1
   * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
+  * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top priority.
   * **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
 * **REQ-2: Different rooms with different categories**
   * **Description:** Our project needs to have different rooms where there will be different categories of trivia questions
@@ -77,25 +78,23 @@ Each group member must supply at least three functional requirements for the pro
   * **Testing:** Whether or not users can answer presented questions freely in this specific mode. 
 
 * **REQ-10**: Hint System
-* **Description**: A system that asks user if they need help after having tried a question a certain number of times.
-*  **Type**: Functional
-*  **Priority**: 5
-*  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
-*  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
-
+  * **Description**: A system that asks user if they need help after having tried a question a certain number of times.
+  *  **Type**: Functional
+  *  **Priority**: 5
+  *  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
+  *  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
 * **REQ-11**: Random select feature
-*  **Description**: A system which selects a random catagory for indecisive users
-*  **Type**: Functional
-*  **Priority**: 4
-*  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random catogory for them.
-*  **Testing**: A test function that checks that everytime a random catagory is begin selected when the user decides to activate the feature
-
+  *  **Description**: A system which selects a random catagory for indecisive users
+  *  **Type**: Functional
+  *  **Priority**: 4
+  *  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random catogory for them.
+  *  **Testing**: A test function that checks that everytime a random catagory is begin selected when the user decides to activate the feature
 * **REQ-12**: "Make your own" feature
-*  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
-*  **Type**: Functional
-*  **Priority**: 4
-*  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
-*  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
+  *  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
+  *  **Type**: Functional
+  *  **Priority**: 4
+  *  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
+  *  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
 
 ## Constraints
 
@@ -140,6 +139,31 @@ In this section, you should list use cases for the project. Use cases are a thor
 *  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
 
 
+* **UC-5:** 
+  * **Description:** User is looking to use this for studying a particular set of questions they have set up.
+  * **Actors:** Users
+  * **Preconditions:** There will need to be questions set ahead of time as well the type of questions being asked.
+  * **Postconditions:** What the user got correct and wrong so they can go back and study more.
+
+* **UC-6:** 
+  * **Description:** Presenter takes the game and present trivia questions to gauge knowledge retention. Using results changes can be made and questions adjusted for later scenarios.
+  * **Actors:** Presenter, Users
+  * **Preconditions:** Accounts to be set up and users added in to record result information from all. There will need to be questions set ahead of time as well the type of questions being asked.
+  * **Postconditions:** Presenter is provided the information of the game. Also what the users got correct and wrong. 
+
+* **UC-7**: Competitive play
+  *  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
+  *  **Actors**: User
+  *  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
+  *  **Postconditions**: The score, if applicable, must appear on the leader board
+
+* **UC-8**: Locally playing with friends and family
+  *  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
+  *  **Actors**: Users
+  *  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
+  *  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
+
+
 ## User Stories
 
 In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
@@ -161,12 +185,32 @@ In this section, you should list user stories for the project. User stories are 
 *  **Description**: A group of players can join a local game in which the questions and thier answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
 
 
+* **US-5**:
+  *  **Type of User**: Presenter
+  *  **Description**: After leading a game of different players the presenter can take use of the game information with results. Ranging from what was answered correctly to what was wrong with metrics. 
+
+* **US-6**:
+  *  **Type of User**: Presenter
+  *  **Description**: Presenter is hosting a fun game with different players as a social activity. This include random and fun interesting questions to keep all that are involved engaged throughout. 
+
+* **US-7**:
+  *  **Type of User**: Player
+  *  **Description**: After answering a question for three times without getting it right, the player is provided access to the hint button which gives a hint, helping the player answer the question. Using the hint button does have a point penalty which is deducted from your total score.
+
+* **US-8**:
+  *  **Type of Users**: Players
+  *  **Description**: A group of players can join a local game in which the questions and their answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
+
+
 ## Glossary
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
 * **Player**:
-*  **Definition**: The user playing the game
+  *  **Definition**: The user playing the game
+* **Presenter**:
+  *  **Definition**: Leader distributing game
+
 
 * **Category:**
   * **Description:** The different pages with different themed trivia questions.
