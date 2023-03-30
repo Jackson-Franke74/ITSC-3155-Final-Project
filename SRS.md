@@ -21,12 +21,9 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.1 | 03/26/23 | Initial upload | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
 | 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
-<<<<<<< HEAD
-| 1.4 | 03/30/23 | Constrains, User Stories, and Glossary updated.| [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
-=======
-| 1.4 | 03/30/23 | Constraints, UC 5-6, US 5-6. glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+| 1.4 | 03/30/23 | Constrains, User Stories, Glossary | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
+| 1.4 | 03/30/23 | Constraints, UC 5-6, US 5-6. , glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 
->>>>>>> b29eb2c8e9ab841e55b14fd57d44237bdae12ef2
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -107,11 +104,7 @@ In this section, you should list any constraints that you have for the project. 
 
 * **Justin**: With our Trivia bot we must enforce formatting as this can be subject of hindering results of the game. Another constraint can be debating which of our features will be completed at each phase. Time and bot input will be a dictating factor on this.
 
-* **Anush:** 
-  * **Constrain 1:** Something that we might have to deal with is the possibility that the questions might be a little too obtuse or difficult for the players. This might be solved with the hint system.
-
-  * **Constrain 2:** The bot might not be able to recognise the answers given for the free response questions by the users. This might be solved by formatting it before feeding it to the bot to be checked. 
-
+* **Anush:**: Something that we might have to deal with is the possibility that the questions might be a little too obtuse or difficult for the players. This might be solved with the hint system. Another would be that he bot might not be able to recognize the answers given for the free response questions by the users. This might be solved by formatting it before feeding it to the bot to be checked. 
 
 ## Use Cases
 
@@ -139,19 +132,6 @@ In this section, you should list use cases for the project. Use cases are a thor
 * **Description:** User wants to go back through the game and show a friend their score, without having to play the entire game again. They log in, and their high score appears.
 * **Preconditions** User must have an account and have played the game at least once before
 * **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
-
-* **UC-5**: Competitive play
-*  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
-*  **Actors**: User
-*  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
-*  **Postconditions**: The score, if applicable, must appear on the leader board
-
-* **UC-6**: Locally playing with friends and family
-*  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
-*  **Actors**: Users
-*  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
-*  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
-
 
 * **UC-5:** 
   * **Description:** User is looking to use this for studying a particular set of questions they have set up.
@@ -190,13 +170,6 @@ In this section, you should list user stories for the project. User stories are 
   * **Type of user:** Player
   * **Description:** A parent, planning a fun night with their kids might select or make their own category to challenge other family members. 
 
-* **US-7**:
-*  **Type of User**: Player
-*  **Description**: After answering a question for three times without getting it right, the player is provided access to the hint button which gives a hint, helping the player answer the question. Using the hint button does have a point panelty which is deducted from your total score.
-
-* **US-8**:
-*  **Type of Users**: Players
-*  **Description**: A group of players can join a local game in which the questions and thier answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
 
 
 * **US-5**:
@@ -221,14 +194,6 @@ In this section, you should list user stories for the project. User stories are 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
 * **Player**:
-<<<<<<< HEAD
-*  **Definition**: The user playing the game
-
-* **Category:**
-  * **Description:** The different pages with different themed trivia questions.
-=======
   *  **Definition**: The user playing the game
 * **Presenter**:
   *  **Definition**: Leader distributing game
-
->>>>>>> b29eb2c8e9ab841e55b14fd57d44237bdae12ef2
