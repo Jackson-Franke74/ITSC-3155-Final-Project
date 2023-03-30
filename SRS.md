@@ -48,7 +48,6 @@ Each group member must supply at least three functional requirements for the pro
   **Priority:** 3
   **Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
   **Testing:** We can test this by advancing to another room and see different questions.
-
 * **REQ-3: Leaderboards**
   **Description:** A leaderboard feature to add some friendly competition to the mix
   **Type:** Functional
