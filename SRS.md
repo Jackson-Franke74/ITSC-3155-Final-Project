@@ -22,7 +22,8 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
 | 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.4 | 03/30/23 | Constrains, User Stories, Glossary | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
-| 1.4 | 03/30/23 | Constraints, UC 5-6, US 5-6. , glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+| 1.5 | 03/30/23 | Constraints, UC 5-6, US 5-6. , glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+| 1.6 | 03/30/23 | Requirements 7-9 | [Jackson Franke](mailto:jfranke5@uncc.edu) | [Jackson Franke](mailto:jfranke5@uncc.edu) |
 
 ## Table of Contents
 
@@ -84,11 +85,11 @@ Each group member must supply at least three functional requirements for the pro
   *  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
   *  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
 * **REQ-11**: Random select feature
-  *  **Description**: A system which selects a random catagory for indecisive users
+  *  **Description**: A system which selects a random category for indecisive users
   *  **Type**: Functional
   *  **Priority**: 4
-  *  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random catogory for them.
-  *  **Testing**: A test function that checks that everytime a random catagory is begin selected when the user decides to activate the feature
+  *  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random category for them.
+  *  **Testing**: A test function that checks that every time a random category is begin selected when the user decides to activate the feature
 * **REQ-12**: "Make your own" feature
   *  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
   *  **Type**: Functional
@@ -101,6 +102,8 @@ Each group member must supply at least three functional requirements for the pro
 In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
 
 * **Neel**: The questions for the game will be pulled form an online database, who's API will have to be implemented in the project for smooth operations. Secondly the project template is of an online store, while we plan on making a trivia bot. We will have to make many changes to the template to allow us to create such a bot.
+
+* **Jackson**: To implement the difficulty levels, each question will need a difficulty rating, which means we will need a way of determining how hard a question is. Another is to implement the social media sharing aspect, we will have to design a way to format the scores in a graphic or a text message, etc.
 
 * **Justin**: With our Trivia bot we must enforce formatting as this can be subject of hindering results of the game. Another constraint can be debating which of our features will be completed at each phase. Time and bot input will be a dictating factor on this.
 
@@ -133,30 +136,29 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions** User must have an account and have played the game at least once before
   * **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
 
-* **UC-5:** 
+* **UC-5:** Study
   * **Description:** User is looking to use this for studying a particular set of questions they have set up.
   * **Actors:** Users
   * **Preconditions:** There will need to be questions set ahead of time as well the type of questions being asked.
   * **Postconditions:** What the user got correct and wrong so they can go back and study more.
 
-* **UC-6:** 
+* **UC-6:** Class quiz
   * **Description:** Presenter takes the game and present trivia questions to gauge knowledge retention. Using results changes can be made and questions adjusted for later scenarios.
   * **Actors:** Presenter, Users
   * **Preconditions:** Accounts to be set up and users added in to record result information from all. There will need to be questions set ahead of time as well the type of questions being asked.
   * **Postconditions:** Presenter is provided the information of the game. Also what the users got correct and wrong. 
 
-* **UC-7**: Competitive play
+* **UC-7** Competitive play
   *  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
   *  **Actors**: User
   *  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
   *  **Postconditions**: The score, if applicable, must appear on the leader board
 
-* **UC-8**: Locally playing with friends and family
+* **UC-8** Locally playing with friends and family
   *  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
   *  **Actors**: Users
   *  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
   *  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
-
 
 ## User Stories
 
@@ -170,7 +172,13 @@ In this section, you should list user stories for the project. User stories are 
   * **Type of user:** Player
   * **Description:** A parent, planning a fun night with their kids might select or make their own category to challenge other family members. 
 
+* **US-3**
+  * **Type of user:** Player
+  * **Description:** User is playing the match variation of the game, they assign each of their answers and hit enter. The game says that 2 of their answers are incorrect. The user switches the two answers, and hits enter again. The game now says that all answers are correct, and moves on to the next question, albeit with less points given to the user because they got the question wrong on the first try.
 
+* **US-4**
+  * **Type of user:** Player
+* **Description:** The user has just finished the game, and wants to display their score on their instagram story. They click share, and a graphic pops up displaying their final score, how many questions they got right, total time taken, etc.
 
 * **US-5**:
   *  **Type of User**: Presenter
@@ -187,7 +195,6 @@ In this section, you should list user stories for the project. User stories are 
 * **US-8**:
   *  **Type of Users**: Players
   *  **Description**: A group of players can join a local game in which the questions and their answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
-
 
 ## Glossary
 
