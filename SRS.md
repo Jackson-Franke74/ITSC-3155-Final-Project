@@ -196,7 +196,7 @@ In this section, you should list user stories for the project. User stories are 
 
 * **US-4**
   * **Type of user:** Player
-* **Description:** The user has just finished the game, and wants to display their score on their instagram story. They click share, and a graphic pops up displaying their final score, how many questions they got right, total time taken, etc.
+  * **Description:** The user has just finished the game, and wants to display their score on their instagram story. They click share, and a graphic pops up displaying their final score, how many questions they got right, total time taken, etc.
 
 * **US-5**:
   *  **Type of User**: Presenter
