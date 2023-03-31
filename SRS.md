@@ -123,15 +123,15 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Postconditions:** The questions and answers need to show up like any other trivia question would in a specific category.
 
 * **US-3** Multiplayer game
-* **Description:** A user wants to play with their friend on the other side of town, so they send a code to their friend, and they both join the same game (like a kahoot)
-* **Actors:** Users
-* **Preconditions:** Both users must have accounts, and a game room must be made so they can join and play together in a coordinated effort
-* **Postconditions:** Scores must be displayed for both users, and a winner declared. 
+  * **Description:** A user wants to play with their friend on the other side of town, so they send a code to their friend, and they both join the same game (like a kahoot)
+  * **Actors:** Users
+  * **Preconditions:** Both users must have accounts, and a game room must be made so they can join and play together in a coordinated effort
+  * **Postconditions:** Scores must be displayed for both users, and a winner declared. 
 
 * **US-4** Score share
-* **Description:** User wants to go back through the game and show a friend their score, without having to play the entire game again. They log in, and their high score appears.
-* **Preconditions** User must have an account and have played the game at least once before
-* **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
+  * **Description:** User wants to go back through the game and show a friend their score, without having to play the entire game again. They log in, and their high score appears.
+  * **Preconditions** User must have an account and have played the game at least once before
+  * **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
 
 * **UC-5:** 
   * **Description:** User is looking to use this for studying a particular set of questions they have set up.
