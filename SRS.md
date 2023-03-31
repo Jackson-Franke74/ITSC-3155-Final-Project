@@ -60,39 +60,57 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 3
   * **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
   * **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
-* **REQ-4:**
+* **REQ-4: Timer**
   * **Description:** A timed mode where it gives you questions and you have to answer within a certain time limit
   * **Type:** `Functional`
   * **Priority:** 1
   * **Rationale:** This requirement is a necessary need for the purpose of the Trivia bot.
   * **Testing:** Wether or not a timed countdown will be initiated.
-* **REQ-5:**
+* **REQ-5: Multiple choice mode**
   * **Description:** A presentable multiple choice mode
   * **Type:** `Functional`
   * **Priority:** 1
   * **Rationale:** The system will present a multiple choice format for the questions purpose.
   * **Testing:** Whether or not a series of answers will show up or not.
-* **REQ-6:**
+* **REQ-6: Free response mode**
   * **Description:** A free response mode for open ended questions
   * **Type:** `Functional`
   * **Priority:** 1
   * **Rationale:** A mode for users to initiate in the trivia bot 
   * **Testing:** Whether or not users can answer presented questions freely in this specific mode. 
-* **REQ-10**: Hint System
+* **REQ-7: Match Mode**
+  * **Description:** A version of the game with multiple questions and answers, and the user must match each answer to it's correct question
+  * **Type:** `Functional`
+  * **Priority:** 3
+  * **Rationale:** Meant to add another variation in the way that the user can play the game, other than just multiple choice
+  * **Testing:** Check that for each answer in the current round, it is assigned to the correct question. If not, specify which answer is wrong and allow the user to retry.
+* **REQ-8: Social media share**
+  * **Description:** A way to format your final score, and share it to other people online (Text, socials, etc)
+  * **Type:** `Functional`
+  * **Priority:** 5
+  * **Rationale:** After the game finishes, a user might want to show off their score and send it to friends. Not the most important thing however, because the game should run exactly the same without it.
+  * **Testing:** After the game is completed, request it give us a graphic, or link to share via text. (And make sure the link works and correctly displays the user's score)
+* **REQ-9: Difficulty levels**
+  * **Description:** The user is allowed to pick a difficulty level of the questions that the game gives them
+  * **Type:** `Functional`
+  * **Priority:** 2
+  * **Rationale:** The user might think that the questions given are too easy or hard, and might want to specify the difficulty presented to them
+  * **Testing:** We can assign a difficulty level to each question in the database, then only give the user questions that apply to their desired difficulty.
+* **REQ-10: Hint System**
   * **Description**: A system that asks user if they need help after having tried a question a certain number of times.
-  *  **Type**: Functional
+  *  **Type**: `Functional`
   *  **Priority**: 5
   *  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
   *  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
-* **REQ-11**: Random select feature
+* **REQ-11: Random select feature** 
   *  **Description**: A system which selects a random category for indecisive users
-  *  **Type**: Functional
+  *  **Type**: `Functional`
   *  **Priority**: 4
   *  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random category for them.
   *  **Testing**: A test function that checks that every time a random category is begin selected when the user decides to activate the feature
-* **REQ-12**: "Make your own" feature
+* **REQ-12: "Make your own" feature**: 
   *  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
-  *  **Type**: Functional
+  *  **Type**: `Functional`
   *  **Priority**: 4
   *  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
   *  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
@@ -166,7 +184,7 @@ In this section, you should list user stories for the project. User stories are 
 
 * **US-1**
   * **Type of user:** Player
-  * **Description:** Trying to challenge themselves, the player started a session to see how well they do in a category that they don't have too much experiece in.
+  * **Description:** Trying to challenge themselves, the player started a session to see how well they do in a category that they don't have too much experience in.
 
 * **US-2**
   * **Type of user:** Player
@@ -204,3 +222,7 @@ In this section, you should list any terms that are used in the document that ma
   *  **Definition**: The user playing the game
 * **Presenter**:
   *  **Definition**: Leader distributing game
+* **Category:**
+  * **Definition:** The different pages with different themed trivia questions.
+* **Difficulty:**
+  * **Definition:** The difficulty of a question is objective, some users might find some questions easier than others. But generally, the users should be able to correctly answer the harder questions less often. All questions are just as achievable, though.  
