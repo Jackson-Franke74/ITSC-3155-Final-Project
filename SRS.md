@@ -20,6 +20,10 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
 | 1.1 | 03/26/23 | Initial upload | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
 | 1.2 | 03/30/23 | Requirements 1-3 | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
+| 1.3 | 03/30/23 | Requirements 4-6 | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+| 1.4 | 03/30/23 | Constrains, User Stories, Glossary | [Anushrut Neupane](mailto:aneupan1@uncc.edu) | [Anushrut Neupane](mailto:aneupan1@uncc.edu) |
+| 1.5 | 03/30/23 | Constraints, UC 5-6, US 5-6. , glossary | [Justin Mendoza](mailto:jmendo10@uncc.edu) | [Justin Mendoza](mailto:jmendo10@uncc.edu) |
+| 1.6 | 03/30/23 | Requirements 7-9 | [Jackson Franke](mailto:jfranke5@uncc.edu) | [Jackson Franke](mailto:jfranke5@uncc.edu) |
 
 ## Table of Contents
 
@@ -37,100 +41,188 @@ We will be building a multiplayer Trivia bot with a wide range of features. This
 ## Requirements
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
+
 * **REQ-1: Multiplayer**
   * **Description:** The program will be able to create rooms for the user to be able to play with friends
-  * **Type:**  Functional
+  * **Type:**  `Functional`
   * **Priority:** 1
-  * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top prio.
+  * **Rationale:** It's in the name, this is a multiplayer trivia bot so multiplayer needs to be top priority.
   * **Testing:** We can test this by creating rooms and seeing if anything breaks when we start the trivia,
 * **REQ-2: Different rooms with different categories**
   * **Description:** Our project needs to have different rooms where there will be different categories of trivia questions
-  * **Type:** Functional
+  * **Type:** `Functional`
   * **Priority:** 3
   * **Rationale:** We need to make sure that the bot itself functions and one category works for us to implement different categories. 
   * **Testing:** We can test this by advancing to another room and see different questions.
 * **REQ-3: Leaderboards**
   * **Description:** A leaderboard feature to add some friendly competition to the mix
-  * **Type:** Functional
+  * **Type:** `Functional`
   * **Priority:** 3
   * **Rationale:** Need to make sure everything else works before trying to implement something that's not as important as multiplayer
   * **Testing:** We can test this feature by competing against each other and making sure that it sets the person with the higher score above the person that got the lesser score.
-
-* **REQ-10**: Hint System
-* **Description**: A system that asks user if they need help after having tried a question a certain number of times.
-*  **Type**: Functional
-*  **Priority**: 5
-*  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
-*  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
-
-* **REQ-11**: Random select feature
-*  **Description**: A system which selects a random catagory for indecisive users
-*  **Type**: Functional
-*  **Priority**: 4
-*  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random catogory for them.
-*  **Testing**: A test function that checks that everytime a random catagory is begin selected when the user decides to activate the feature
-
-* **REQ-12**: "Make your own" feature
-*  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
-*  **Type**: Functional
-*  **Priority**: 4
-*  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
-*  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
-
+* **REQ-4: Timer**
+  * **Description:** A timed mode where it gives you questions and you have to answer within a certain time limit
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** This requirement is a necessary need for the purpose of the Trivia bot.
+  * **Testing:** Wether or not a timed countdown will be initiated.
+* **REQ-5: Multiple choice mode**
+  * **Description:** A presentable multiple choice mode
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** The system will present a multiple choice format for the questions purpose.
+  * **Testing:** Whether or not a series of answers will show up or not.
+* **REQ-6: Free response mode**
+  * **Description:** A free response mode for open ended questions
+  * **Type:** `Functional`
+  * **Priority:** 1
+  * **Rationale:** A mode for users to initiate in the trivia bot 
+  * **Testing:** Whether or not users can answer presented questions freely in this specific mode. 
+* **REQ-7: Match Mode**
+  * **Description:** A version of the game with multiple questions and answers, and the user must match each answer to it's correct question
+  * **Type:** `Functional`
+  * **Priority:** 3
+  * **Rationale:** Meant to add another variation in the way that the user can play the game, other than just multiple choice
+  * **Testing:** Check that for each answer in the current round, it is assigned to the correct question. If not, specify which answer is wrong and allow the user to retry.
+* **REQ-8: Social media share**
+  * **Description:** A way to format your final score, and share it to other people online (Text, socials, etc)
+  * **Type:** `Functional`
+  * **Priority:** 5
+  * **Rationale:** After the game finishes, a user might want to show off their score and send it to friends. Not the most important thing however, because the game should run exactly the same without it.
+  * **Testing:** After the game is completed, request it give us a graphic, or link to share via text. (And make sure the link works and correctly displays the user's score)
+* **REQ-9: Difficulty levels**
+  * **Description:** The user is allowed to pick a difficulty level of the questions that the game gives them
+  * **Type:** `Functional`
+  * **Priority:** 2
+  * **Rationale:** The user might think that the questions given are too easy or hard, and might want to specify the difficulty presented to them
+  * **Testing:** We can assign a difficulty level to each question in the database, then only give the user questions that apply to their desired difficulty.
+* **REQ-10: Hint System**
+  * **Description**: A system that asks user if they need help after having tried a question a certain number of times.
+  *  **Type**: `Functional`
+  *  **Priority**: 5
+  *  **Rationale**: User may not know the answer to the question and instead of choosing to move to the next question, they will also have an option to get a hint for the question.
+  *  **Testing**: A test function that checks that the hint provided is same as the hint related to the question in the database of hints.
+* **REQ-11: Random select feature** 
+  *  **Description**: A system which selects a random category for indecisive users
+  *  **Type**: `Functional`
+  *  **Priority**: 4
+  *  **Rationale**: User may not have a specific category they wish to play in, and this feature selects a random category for them.
+  *  **Testing**: A test function that checks that every time a random category is begin selected when the user decides to activate the feature
+* **REQ-12: "Make your own" feature**: 
+  *  **Description**: A feature that allows the user to create their own set of questions and answers to play locally with their teammates
+  *  **Type**: `Functional`
+  *  **Priority**: 4
+  *  **Rationale**: User may have a certain set of questions, with which they want to play the game and this function will allow them to do so.
+  *  **Testing**: A test function that will check if the questions are linked with the answers that were provided by user, and a function which checks that only the questions provided by the user are asked.
 
 ## Constraints
 
 In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
 
-* **Neel**: The questions for the game will be pulled form an online database, whos API will have to be implimented in the project for smooth operations. Secondly the project template is of an online store, while we plan on making a trevia bot. We will have to make many changes to the templet to allow us to create such a bot.
+* **Neel**: The questions for the game will be pulled form an online database, who's API will have to be implemented in the project for smooth operations. Secondly the project template is of an online store, while we plan on making a trivia bot. We will have to make many changes to the template to allow us to create such a bot.
 
+* **Jackson**: To implement the difficulty levels, each question will need a difficulty rating, which means we will need a way of determining how hard a question is. Another is to implement the social media sharing aspect, we will have to design a way to format the scores in a graphic or a text message, etc.
+
+* **Justin**: With our Trivia bot we must enforce formatting as this can be subject of hindering results of the game. Another constraint can be debating which of our features will be completed at each phase. Time and bot input will be a dictating factor on this.
+
+* **Anush:**: Something that we might have to deal with is the possibility that the questions might be a little too obtuse or difficult for the players. This might be solved with the hint system. Another would be that he bot might not be able to recognize the answers given for the free response questions by the users. This might be solved by formatting it before feeding it to the bot to be checked. 
 
 ## Use Cases
 
 In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
 
-* **ID:** A unique identifier for the use case. This should be a number that is unique across the entire document (something like UC-1, UC-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A description of the use case that gives the user a high-level overview of how the system is interacted with.
-  * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
-  * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
-  * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
+* **UC-1** Pass-time 
+  * **Description:** A user might just want to pass some time by challenging themselves and playing alone. They might choose different categories to do themselves and add their score to the leaderboard.
+  * **Actors**: User
+  * **Preconditions:** User needs to be logged in.
+  * **Postconditions:** The score needs to be shown in the leaderboard. 
 
-* **UC-7**: Competative play
-*  **Description**: User can decide to play competatively by not using the hint feature, thus making sure they are not hit with a point panelty when using the hint feature for the hint feature. The compatetive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
-*  **Actors**: User
-*  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for thier score to appear on the leader board.
-*  **Postconditions**: The score, if applicable, must appear on the leader board
+* **UC-2** Review
+  * **Description** A user might use the feature to create your their own set of answers and questions to review for an upcoming test or to study for the final exams
+  * **Actors:** User
+  * **Preconditions:** User needs to be logged in to be able to create their own set of questions
+  * **Postconditions:** The questions and answers need to show up like any other trivia question would in a specific category.
 
-* **UC-8**: Locally playing with friends and family
-*  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competatively amoung the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
-*  **Actors**: Users
-*  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
-*  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
+* **US-3** Multiplayer game
+  * **Description:** A user wants to play with their friend on the other side of town, so they send a code to their friend, and they both join the same game (like a kahoot)
+  * **Actors:** Users
+  * **Preconditions:** Both users must have accounts, and a game room must be made so they can join and play together in a coordinated effort
+  * **Postconditions:** Scores must be displayed for both users, and a winner declared. 
 
+* **US-4** Score share
+  * **Description:** User wants to go back through the game and show a friend their score, without having to play the entire game again. They log in, and their high score appears.
+  * **Preconditions** User must have an account and have played the game at least once before
+  * **Postcondidtions** User's score must be correctly displayed and be able to be shared if necessary. (Maybe have a home screen with high score displayed?)
+
+* **UC-5:** Study
+  * **Description:** User is looking to use this for studying a particular set of questions they have set up.
+  * **Actors:** Users
+  * **Preconditions:** There will need to be questions set ahead of time as well the type of questions being asked.
+  * **Postconditions:** What the user got correct and wrong so they can go back and study more.
+
+* **UC-6:** Class quiz
+  * **Description:** Presenter takes the game and present trivia questions to gauge knowledge retention. Using results changes can be made and questions adjusted for later scenarios.
+  * **Actors:** Presenter, Users
+  * **Preconditions:** Accounts to be set up and users added in to record result information from all. There will need to be questions set ahead of time as well the type of questions being asked.
+  * **Postconditions:** Presenter is provided the information of the game. Also what the users got correct and wrong. 
+
+* **UC-7** Competitive play
+  *  **Description**: User can decide to play competitively by not using the hint feature, thus making sure they are not hit with a point penalty when using the hint feature for the hint feature. The competitive leader board will make not using the hint feature worth it as the users will aim to take the highest possible place on the board.
+  *  **Actors**: User
+  *  **Preconditions**: The user will need to have an account to be part of the leader board and the user must also be logged in for their score to appear on the leader board.
+  *  **Postconditions**: The score, if applicable, must appear on the leader board
+
+* **UC-8** Locally playing with friends and family
+  *  **Description**: User can play a game with their own questions locally with a select group of people. The user(s) will be able to play competitively among the group with each user having their own score and a final place of 1st, 2nd and 3rd at the end of the game.
+  *  **Actors**: Users
+  *  **Preconditons**: The user will need an account and all the people in the group playing will also need an account.
+  *  **Postconditons**: The final score must be displayed at the end of the game while showing the top three scores
 
 ## User Stories
 
 In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
 
-* **ID:** A unique identifier for the user story. This should be a number that is unique across the entire document (something like US-1, US-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
-  * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
+* **US-1**
+  * **Type of user:** Player
+  * **Description:** Trying to challenge themselves, the player started a session to see how well they do in a category that they don't have too much experience in.
+
+* **US-2**
+  * **Type of user:** Player
+  * **Description:** A parent, planning a fun night with their kids might select or make their own category to challenge other family members. 
+
+* **US-3**
+  * **Type of user:** Player
+  * **Description:** User is playing the match variation of the game, they assign each of their answers and hit enter. The game says that 2 of their answers are incorrect. The user switches the two answers, and hits enter again. The game now says that all answers are correct, and moves on to the next question, albeit with less points given to the user because they got the question wrong on the first try.
+
+* **US-4**
+  * **Type of user:** Player
+  * **Description:** The user has just finished the game, and wants to display their score on their instagram story. They click share, and a graphic pops up displaying their final score, how many questions they got right, total time taken, etc.
+
+* **US-5**:
+  *  **Type of User**: Presenter
+  *  **Description**: After leading a game of different players the presenter can take use of the game information with results. Ranging from what was answered correctly to what was wrong with metrics. 
+
+* **US-6**:
+  *  **Type of User**: Presenter
+  *  **Description**: Presenter is hosting a fun game with different players as a social activity. This include random and fun interesting questions to keep all that are involved engaged throughout. 
 
 * **US-7**:
-*  **Type of User**: Player
-*  **Description**: After answering a question for three times without getting it right, the player is provided access to the hint button which gives a hint, helping the player answer the question. Using the hint button does have a point panelty which is deducted from your total score.
+  *  **Type of User**: Player
+  *  **Description**: After answering a question for three times without getting it right, the player is provided access to the hint button which gives a hint, helping the player answer the question. Using the hint button does have a point penalty which is deducted from your total score.
 
 * **US-8**:
-*  **Type of Users**: Players
-*  **Description**: A group of players can join a local game in which the questions and thier answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
-
+  *  **Type of Users**: Players
+  *  **Description**: A group of players can join a local game in which the questions and their answers are entered by the player before the game starts. Once the game starts the questions that are asked are from the list of questions entered before and the points of each user is kept track of. At the end of the game the top three scores are displayed from highest to the lowest.
 
 ## Glossary
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
-* **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
-  * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
-
 * **Player**:
-*  **Definition**: The user playing the game
+  *  **Definition**: The user playing the game
+* **Presenter**:
+  *  **Definition**: Leader distributing game
+* **Category:**
+  * **Definition:** The different pages with different themed trivia questions.
+* **Difficulty:**
+  * **Definition:** The difficulty of a question is objective, some users might find some questions easier than others. But generally, the users should be able to correctly answer the harder questions less often. All questions are just as achievable, though.  
