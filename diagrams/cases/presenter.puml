@@ -1,0 +1,18 @@
+@startuml presenter
+left to right direction
+actor Presenter
+rectangle "System" as system {
+    (Login)
+    (Register)
+    (Create Set)
+    (View Set)
+    (Logout)
+    (View Leaderboards)
+}
+Presenter --> (Login)
+Presenter --> (Register)
+Presenter --> (Create Set)
+Presenter --> (View Set)
+Presenter --> (Logout)
+Presenter --> (View Leaderboards)
+@enduml
