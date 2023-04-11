@@ -1,9 +1,0 @@
-@startuml packages
-set namespaceSeparator none
-package "authentication" as authentication #aliceblue {
-    `signOn(id) -> None`.
-    `signOff(id) -> None`.
-}
-package "authentication.authTools" as authentication.authTools #aliceblue {
-}
-@enduml
