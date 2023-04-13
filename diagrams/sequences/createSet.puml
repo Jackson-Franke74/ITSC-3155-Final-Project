@@ -1,0 +1,19 @@
+@startuml createSet
+actor User
+actor Presenter
+boundary "System" as system
+control "Sessions" as sessions
+control "Database" as db
+User -> system: Set
+activate system
+system -> db: database_pipeline(set)
+activate db
+db --> system: newSet
+deactivate db
+system -> sessions: add_new_session(newSet)
+activate sessions
+sessions --> system: None
+deactivate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml
