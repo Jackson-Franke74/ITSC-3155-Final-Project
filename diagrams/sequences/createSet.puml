@@ -1,10 +1,9 @@
 @startuml createSet
-actor User
-actor Presenter
+actor User_Presenter
 boundary "System" as system
 control "Sessions" as sessions
 control "Database" as db
-User -> system: Set
+User_Presenter -> system: Set
 activate system
 system -> db: database_pipeline(set)
 activate db

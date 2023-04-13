@@ -1,10 +1,9 @@
 @startuml login
-actor User
-actor presenter
+actor User_Presenter
 boundary "System" as system
 control "Sessions" as sessions
 control "Authentication" as auth
-User/presenter -> system: Login
+User_Presenter -> system: Login
 activate system
 system -> auth: login_pipeline(username, password)
 activate auth
