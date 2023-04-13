@@ -1,0 +1,17 @@
+@startuml startSession
+actor User_Presenter
+boundary "System" as system
+control "Sessions" as sessions
+control "Database" as db
+User_Presenter -> system: Set
+activate system
+system -> db: database_pipeline(set)
+activate db
+db --> system: set1
+deactivate db
+system -> sessions: start_new_session(set1)
+activate sessions
+sessions --> system: end_new_session(set1)
+system -> system: redirect to home page
+deactivate system
+@enduml

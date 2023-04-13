@@ -1,0 +1,16 @@
+@startuml viewSet
+actor User_Presenter
+boundary "System" as system
+control "Sessions" as sessions
+control "Database" as db
+User_Presenter -> system: viewSet
+activate system
+system -> db: database_pipeline(viewSet)
+activate db
+db --> system: viewSet
+deactivate db
+system -> sessions: viewSet("")
+activate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml
