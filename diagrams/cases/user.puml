@@ -1,0 +1,22 @@
+@startuml user
+left to right direction
+actor User
+rectangle "System" as system{
+    (Login)
+    (Register)
+    (Start Session)
+    (View Leaderboards)
+    (Create Set)
+    (View Set)
+    (Logout)
+    (Start Random Session)
+}
+User --> (Login)
+User --> (Register)
+User --> (Start Session)
+User --> (View Leaderboards)
+User --> (Create Set)
+User --> (View Set)
+User --> (Logout)
+User --> (Start Random Session)
+@enduml
