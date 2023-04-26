@@ -55,36 +55,21 @@ class UserSession:
         """
         return id in self.cart
 
-    def add_new_item(self, id: str, name: str, price: int, quantity: int, discount: float = 0.0, tax_rate: float = 0.05) -> None:
+    def add_new_item(self, question: str, pointVal: int, answer: str, id: int) -> None:
         """
         Creates a new item to add to the user's cart.
 
         args:
-            - id: The id of the item.
-            - name: The name of the item.
-            - price: The price of the item.
-            - quantity: The quantity of the item.
-            - discount: The discount of the item.
-            - tax_rate: The tax rate of the item.
+        - id: question ID
+        - question: question
+        - answer: answer
+        - pointval: value of the question in points
 
         returns:
             - None
         """
-        self.cart[id] = {"name": name, "price": price, "quantity": quantity,
-                         "discount": discount, "tax_rate": tax_rate}
+        self.cart[id] = {"question": question, "answer" : answer, "pointval" : pointVal}
 
-    def update_item_quantity(self, id: str, change_to_quantity: int) -> None:
-        """
-        Updates the quantity of an item in the user's cart.
-
-        args:
-            - id: The id of the item.
-            - quantity: The quantity of the item.
-        """
-        if self.cart[id]["quantity"] + change_to_quantity <= 0:
-            self.remove_item(id)
-        else:
-            self.cart[id]["quantity"] += change_to_quantity
 
     def remove_item(self, id: str) -> None:
         """
