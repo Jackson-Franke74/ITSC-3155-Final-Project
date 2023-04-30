@@ -26,6 +26,40 @@ def login():
 def logout():
     print("Logged out.")
 
+# Define current difficulty level
+def changeDifficulty():
+    questions = [] #this is the array where we would draw the questions and answers from
+    diff = input("What level of difficulty would you like? (1, 2 or 3) ")
+    if diff == "1": 
+        def foreach (question, questions):
+            if (question.Diffuculty() == "Easy"): #Dificulty is already a setting in the question database online
+                questions.add(question);
+    elif diff == "2": 
+        def foreach (question, questions):
+            if (question.Diffuculty() == "Medium"):
+                questions.add(question);
+    elif diff == "3": 
+        def foreach (question, questions):
+            if (question.Diffuculty() == "Hard"):
+                questions.add(question);
+    else: 
+        print("Invalid difficulty")
+    return questions
+
+def TFMode():
+    questions = [] #this array represents the question database
+    def foreach (question, questions):
+        if (question.Type() == "True / False"): #Type is an option for each question in the question database.
+            #The other option is multiple choice
+            questions.add(question)
+    return questions
+
+def SocialShare():
+    user_name = input("Please enter your name: ")
+    user_score = number_correct() #the score of correct answers from the user in the current round
+    design = "User: " + user_name + "scored " + user_score + " on " + user_difficulty + "!" 
+    return design
+
 def main():
     while True:
         print("1. Register")
