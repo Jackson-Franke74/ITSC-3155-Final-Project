@@ -1,164 +1,105 @@
-from core.utils import calculate_total_cost
-from datetime import datetime
-from database.db import Database
+from typing import List
 
-
-class UserSession:
-    """
-    UserSession is a class that represents a user's shopping session.
-
-    args:
-        - username: The username of the user.
-        - db: The database to use.
-
-    attributes:
-        - username: The username of the user.
-        - cart: A dictionary of dictionaries representing the items in the user's cart.
-        - total_cost: The total cost of the user's cart.
-        - date: The date of the user's session.
-        - db: The database to use.
-    """
-
-    def __init__(self, username: str, db: Database):
-        self.username = username
-        self.total_cost = 0
-        self.date = None
-        self.db = db
-        self.cart = self.empty_cart()
-
-    def empty_cart(self) -> dict:
-        """
-        Fills the cart dictionary with item ids and 0 quantities.
-
-        args:
-            - None
-
-        returns:
-            - A dictionary of dictionaries representing the items in the user's cart.
-        """
-        inventory = self.db.get_full_inventory()
-        new_cart = {}
-        for item in inventory:
-            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,
-                                    "discount": 0, "tax_rate": 0}
-        return new_cart
-
-    def is_item_in_cart(self, id: str) -> bool:
-        """
-        Checks if an item is in the user's cart.
-
-        args:
-            - id: The id of the item.
-
-        returns:
-            - True if the item is in the user's cart, False otherwise.
-        """
-        return id in self.cart
-
-    def add_new_item(self, question: str, pointVal: int, answer: str, id: int) -> None:
-        """
-        Creates a new item to add to the user's cart.
-
-        args:
-        - id: question ID
-        - question: question
-        - answer: answer
-        - pointval: value of the question in points
-
-        returns:
-            - None
-        """
-        self.cart[id] = {"question": question, "answer" : answer, "pointval" : pointVal}
-
-
-    def remove_item(self, id: str) -> None:
-        """
-        Removes an item from the user's cart.
-
-        args:
-            - id: The id of the item.
-        """
-        del self.cart[id]
-
-    def update_total_cost(self) -> None:
-        """
-        Updates the total cost of the user's cart.
-        """
-        self.total_cost = calculate_total_cost(self.cart)
-
-    def submit_cart(self) -> None:
-        """
-        Called when the order is submitted. Finalizes user session details.
-
-        args:
-            - None
-
-        returns:
-            - None
-        """
-        self.update_total_cost()
-        self.date = datetime.now()
-
-
-class Sessions:
-    """
-    Sessions is a class that represents the collection of active sessions.
-
-    args:
-        - None
-
-    attributes:
-        - sessions: A dictionary of user sessions.
-    """
-
+class PointSystem:
     def __init__(self):
-        self.sessions = {}
+        self.points = {}
+    
+    def add_points(self, user, points):
+        if user in self.points:
+            self.points[user] += points
+        else:
+            self.points[user] = points
+    
+    def remove_points(self, user, points):
+        if user in self.points:
+            self.points[user] -= points
+            if self.points[user] < 0:
+                self.points[user] = 0
 
-    def add_new_session(self, username: str, db: Database) -> None:
-        """
-        Adds a new user session to the collection of sessions.
+    def get_points(self, user):
+        return self.points.get(user, 0)
+    
+class TriviaQuestion:
+    def __init__(self, question: str, answers: List[str], correct_answer: str, point_value: int):
+        self.question = question
+        self.answers = answers
+        self.correct_answer = correct_answer
+        self.point_value = point_value
+    
+    @classmethod
+    def create_question(cls):
+        question = input("Please enter the trivia question: ")
+        answers = []
+        while True:
+            answer = input("Please enter the answers (or 'done' to finish): ")
+            if answer == 'done':
+                break
+            answers.append(answer)
+        correct_answer = input("Please enter the correct answer: ")
+        point_value = int(input("Please enter the point value: "))
+        return cls(question, answers, correct_answer, point_value)
 
-        args:
-            - username: The username of the user.
-            - db: The database to use.
+    
+    def check_answer(self, player_answer: str) -> bool:
+        return player_answer.lower() == self.correct_answer.lower()
+    
+    
+class TriviaGame:
+    def __init__(self, questions: List[dict]):
+        self.questions = questions
+        self.players = {}
 
-        returns:
-            - None
-        """
-        self.sessions[username] = UserSession(username, db)
+    def add_player(self, name: str):
+        self.players[name] = 0
+    
+    def play_question(self, questions: dict, player: str, answer: str) -> bool:
+        q = TriviaQuestion(questions["question"], questions["answer"], questions["correct_answer"], questions["point_value"])
+        if answer.lower() == q.correct_answer.lower():
+            print("Correct!")
+            self.players[player] += q.point_value
+        else:
+            print("Incorrect!")
+    
+    def play_game(self):
+        for question in self.questions:
+            print("Question:", question["question"],"\nPoint Value:",question["point_value"])
+            for i, answer in enumerate(question["answer"]):
+                print(f"{i+1}. {answer}")
+            response = input("Your answer (put the number that's corresponding.): ")
+            player = input("Your name: ")
+            if player not in self.players:
+                self.add_player(player)
+            if response.isdigit():
+                response = int(response)
+                if response >= 1 and response <= len(question["answer"]):
+                    if self.play_question(question, player, question["answer"][response-1]):
+                        pass
+                    else:
+                        pass
+                else:
+                    print("invalid answer number")
+            else:
+                print("invalid input")
+    
+    def print_leaderboard(self):
+        sorted_players = sorted(self.players.items(), key= lambda x:x[1], reverse= True)
+        for player, score in sorted_players:
+            print(f"{player}: {score} points")
+            
 
-    def get_session(self, username: str) -> UserSession:
-        """
-        Gets a user session from the collection of sessions.
 
-        args:
-            - username: The username of the user.
+def main():
+    makeOwnq1 = TriviaQuestion.create_question()
 
-        returns:
-            - The user session.
-        """
-        return self.sessions[username]
+    questins = [{"question": makeOwnq1.question,
+                 "answer" : makeOwnq1.answers,
+                 "correct_answer": makeOwnq1.correct_answer,
+                 "point_value": makeOwnq1.point_value}]
 
-    def remove_session(self, username: str) -> None:
-        """
-        Removes a user session from the collection of sessions.
+    
+    game = TriviaGame(questins)
+    game.play_game()
+    game.print_leaderboard()
 
-        args:
-            - username: The username of the user.
-
-        returns:
-            - None
-        """
-        del self.sessions[username]
-
-    def get_all_sessions(self) -> dict:
-        """
-        Gets all user sessions from the collection of sessions.
-
-        args:
-            - None
-
-        returns:
-            - A dictionary of user sessions.
-        """
-        return self.sessions
+if __name__ == "__main__":
+    main()
