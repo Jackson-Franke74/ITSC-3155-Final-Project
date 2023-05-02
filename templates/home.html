@@ -1,40 +1,45 @@
-{% extends "layout.html" %}
-
-{% block content %}
-
-<div class="row" id="products_page">
-    <div class="col-md-12">
-        <h3>Products</h3>
-        <hr>
-        <div class="row">
-            <form action="/checkout" method="post">
-                <div class="form-group">
-                    <div class="row">
-                        {% for product in products %}
-                        <div class="col-md-4">
-                            <div class="product_card" id="product_card">
-                                <img src="{{ product.image_url }}" class="product_card-img" alt="...">
-                                <div class="product_card-body">
-                                    <h5 class="product_card-title">{{ product.item_name }}</h5>
-                                    <p class="product_card-text">{{ product.info }}</p>
-                                    <p class="product_card-price">${{ product.price }}</p>
-                                    <input type="number" class="quantity" id={{product.id}} name={{product.id}}
-                                        placeholder="0">
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12" id="index_buttons">
-                        <button type="submit" class="btn btn-primary" id="checkout_button">Order</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Site</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+	<header>
+		<h1>Trivia Site</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Register</a></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Welcome to Trivia Site!</h2>
+			<p>Test your knowledge with our fun and challenging trivia quizzes.</p>
+			<button>Start Quiz</button>
+		</section>
+		<section>
+			<h2>Popular Categories</h2>
+			<ul>
+				<li><a href="#">Geography</a></li>
+				<li><a href="#">History</a></li>
+				<li><a href="#">Science</a></li>
+				<li><a href="#">Sports</a></li>
+			</ul>
+		</section>
+		<section>
+			<h2>About Trivia Site</h2>
+			<p>This is a website dedicated to providing fun and educational trivia quizzes on a variety of topics.</p>
+		</section>
+	</main>
+	<footer>
+		<p>Thank you!
+	</footer>
+</body>
+</html>
