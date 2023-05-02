@@ -1,0 +1,15 @@
+@startuml startRandomSession
+actor User_Presenter
+boundary "System" as system
+control "Sessions" as sessions
+control "Authentication" as auth
+database "Database" as db
+User_Presenter -> system: Login
+activate system
+system -> sessions: add_new_session(username, db)
+activate sessions
+sessions --> system: startRandomSession(questions)
+sessions --> system: endRandomSession(questions)
+system -> system: redirect to home page
+deactivate system
+@enduml

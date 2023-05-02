@@ -1,0 +1,18 @@
+@startuml classes
+set namespaceSeparator none
+class "Sessions" as core.session.Sessions #aliceblue {
+  sessions : dict
+  add_new_session(username: str, db: Database) -> None
+  get_all_sessions() -> dict
+  get_session(username: str) -> UserSession
+  remove_session(username: str) -> None
+}
+class "UserSession" as core.session.UserSession #aliceblue {
+  date : datetime, NoneType
+  db : Database
+  username : str
+  add_new_item(id: str, name: str, question: str, answer: str, points: int) -> None
+  remove_item(id: str) -> None
+  submit_set() -> None
+}
+@enduml

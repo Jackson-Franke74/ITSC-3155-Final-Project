@@ -1,0 +1,18 @@
+@startuml login
+actor User_Presenter
+boundary "System" as system
+control "Authentication" as auth
+database "Database" as db
+User_Presenter -> system: Register
+activate system
+system -> auth: register_pipeline(username, password)
+activate auth
+auth --> system: new_user
+deactivate auth
+system -> db: add_new_user(new_user)
+activate db
+db --> system: True
+deactivate db
+system -> system: redirect to home page
+deactivate system
+@enduml

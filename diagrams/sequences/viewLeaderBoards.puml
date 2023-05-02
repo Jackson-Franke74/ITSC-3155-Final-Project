@@ -1,0 +1,16 @@
+@startuml viewLeaderboards
+actor User_Presenter
+boundary "System" as system
+control "Sessions" as sessions
+control "Database" as db
+User_Presenter -> system: viewLeaderboards
+activate system
+system -> db: database_pipeline(viewLeaderboards)
+activate db
+db --> system: viewLeaderboards
+deactivate db
+system -> sessions: viewLeaderboards
+activate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml

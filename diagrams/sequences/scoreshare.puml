@@ -1,0 +1,18 @@
+@startuml login
+actor User
+boundary "System" as system
+control "Sessions" as sessions
+control "Authentication" as auth
+User -> system: Login
+activate system
+system -> auth: login_pipeline(username, password)
+activate auth
+auth --> system: True
+deactivate auth
+system -> sessions: show_scores(username, session_ID)
+activate sessions
+sessions --> system: None
+deactivate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml
