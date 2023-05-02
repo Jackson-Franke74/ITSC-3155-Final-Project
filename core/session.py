@@ -39,10 +39,7 @@ def create_question() -> dict:
             'correct_answer' : correct_answer,
             'point_value' : point_value
         }
-    
-def check_answer(trivia_question: dict, player_answer: str) -> bool:
-    return player_answer.lower() == trivia_question['correct_answer'].lower()
-    
+ 
 
 def add_player(players: dict[str, int], name: str) -> None:
     players[name] = 0
@@ -72,6 +69,21 @@ def play_game(questions: List[dict[str, any]]) -> dict[str, int]:
         else:
             print("invalid input")
     return players
+
+def play_game_free_response(game):
+    for question in game.questions:
+        print("Question:", question["question"], "\nPoint Value:", question["point_value"])
+        response = input("Please input your answer: ")
+        player = input("Your name: ")
+        if player not in game.players:
+            add_player(game, player)
+        if response is not (type(str)):
+            if play_question(game, question, player, response):
+                pass
+            else:
+                pass
+        else:
+            print("invalid answer!")
 
 def print_leaderboard(players: dict[str, int]) -> None:
     sorted_players = sorted(players.items(), key= lambda x:x[1], reverse= True)
@@ -137,3 +149,5 @@ def socialShare():
     user_score = data["results"] #the score of correct answers from the user in the current round
     design = "User: " + user_name + "scored " + user_score + " on " + currentDifficulty +" difficulty and " + currentType + " type!" 
     return design
+
+
