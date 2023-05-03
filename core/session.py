@@ -28,14 +28,26 @@ def create_question() -> dict:
         if answer == 'done':
             break
         answers.append(answer)
+    while True:
         correct_answer = input("Please enter the correct answer: ")
+        if correct_answer not in answers:
+            print("Please only enter the answers that you have previously made.")
+        else:
+            print("Your selected correct answer is:", correct_answer)
+            break
+    while True:
         point_value = input("Please enter the point value: ")
-        return{
-            'question' : question,
-            'answers' : answers,
-            'correct_answer' : correct_answer,
-            'point_value' : point_value
-        }
+        if point_value.isnumeric():
+            print("Your selected point value is:", point_value)
+            break
+        else:
+            print("Please only input numbers.")
+    return{
+        'question' : question,
+        'answers' : answers,
+        'correct_answer' : correct_answer,
+        'point_value' : point_value
+    }
  
 
 def add_player(players: dict[str, int], name: str) -> None:
@@ -50,8 +62,8 @@ def play_question(question: dict[str, any], players: dict[str, int], player: str
 def play_game(questions: List[dict[str, any]]) -> dict[str, int]:
     players = {}
     for question in questions:
-        print("Question: ", question['question'], "\nPoint Value: ", question['point_value'])
-        for i, answer in enumerate(question['answer']):
+        print("Question: ", question["question"], "\nPoint Value: ", question["point_value"])
+        for i, answer in enumerate(question["answers"]):
             print(f"{i+1}.{answer}")
         response = input("Your answer (put the number that's corresponding.): ")
         player = input("Your name: ")
@@ -59,8 +71,8 @@ def play_game(questions: List[dict[str, any]]) -> dict[str, int]:
             add_player(players, player)
         if response.isdigit():
             response = int(response)
-            if response >= 1 and response <= len(question['answer']):
-                play_question(question, players, question["answer"][response-1])
+            if response >= 1 and response <= len(question["answers"]):
+                play_question(question, players, player, question["correct_answer"][response-1])
             else:
                 print("invalid answer number")
         else:
