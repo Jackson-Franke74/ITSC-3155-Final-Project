@@ -1,8 +1,5 @@
 from typing import List
 import requests
-
-currentDifficulty = "Any Difficulty"
-currentType = "Any Type"
     
 def create_points_system() -> dict:
     return{}
@@ -22,7 +19,7 @@ def remove_points(points: dict, user: str, points_to_remove: int):
 def get_points(points: dict, user: str) -> int:
     return points.get(user, 0)
 
-    
+
 def create_question() -> dict:
     question = input("Please enter your trivia question: ")
     answers = []
@@ -89,55 +86,7 @@ def print_leaderboard(players: dict[str, int]) -> None:
     sorted_players = sorted(players.items(), key= lambda x:x[1], reverse= True)
     for player, score in sorted_players:
         print(f"{player}: {score} points")
-            
-# Define current difficulty level, category of questions and type of question
-def changeQuestions():
-    diff = input("What level of difficulty would you like? (1, 2 or 3)")
-    typ = input ("What type of quesiton would you like? (Multiple choice or True/False&token=myToken)")
-    if diff == "1" and typ == "Multiple choice": 
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple&token=myToken")
-        print("Changed difficulty level to easy!")
-        currentDifficulty = "Easy"
-        currentType = "Multiple Choice"
-    elif diff == "2" and typ == "Multiple choice":
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple&token=myToken")
-        print("Changed difficulty level to medium and type to True/False!")
-        currentDifficulty = "Medium"
-        currentType = "Multiple choice"
-    elif diff == "3" and typ == "Multiple choice":
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple&token=myToken")
-        print("Changed difficulty level to hard and type to True/False!")
-        currentDifficulty = "Hard"
-        currentType = "Multiple choice"
-    elif diff == "1" and typ == "True/False":
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean&token=myToken")
-        print("Changed difficulty level to easy and type to True/False!")
-        currentDifficulty = "Easy"
-        currentType = "True/False"
-    elif diff == "2" and typ == "True/False": 
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean&token=myToken")
-        print("Changed difficulty level to medium and type to True/False!")
-        currentDifficulty = "Medium"
-        currentType = "True/False"
-    elif diff == "3" and typ == "True/False":
-        response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean&token=myToken")
-        print("Changed difficulty level to hard and type to True/False!")
-        currentDifficulty = "Hard"
-        currentType = "True/False"
-    else: 
-        print("Invalid choice")
-    if response.status_code == 200: 
-        print("Request successful!")
-    else:
-        print("Request failed with status code ", response.status_code)
-    data = response.json()
-    questions =  data["results"]
-    for question in questions:
-        print("Question: ", questions["question"])
-        print("Correct answer: ", questions["correct_answer"])
-        print("Incorrect answers: ", questions["incorrect_answers"])
-        print()
-
+        
 def socialShare():
     response = requests.get("https://opentdb.com/api_token.php?command=request")
     if response.status_code == 200: 
@@ -147,7 +96,5 @@ def socialShare():
     data = response.json()
     user_name = input("Please enter your name: ")
     user_score = data["results"] #the score of correct answers from the user in the current round
-    design = "User: " + user_name + "scored " + user_score + " on " + currentDifficulty +" difficulty and " + currentType + " type!" 
+    design = "User: " + user_name + "scored " + user_score + " on " + data["difficulty"] +" difficulty and " + data["type"] + " type!" 
     return design
-
-

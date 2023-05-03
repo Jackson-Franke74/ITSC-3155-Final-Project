@@ -1,9 +1,11 @@
 from core.utils import dict_factory, calculate_cost
 import datetime as dt
 import sqlite3
+import requests
 
 
 class Database:
+
     """
     A class that handles all database operations.
 
@@ -719,3 +721,39 @@ class Database:
         self.cursor.execute(
             "UPDATE sales SET cost = ? WHERE id = ?", (new_cost, sale_id))
         self.connection.commit()
+
+    # Define current difficulty level, category of questions and type of question
+    def changeQuestions():
+        diff = input("What level of difficulty would you like? (1, 2 or 3)")
+        typ = input ("What type of quesiton would you like? (Multiple choice or True/False&token=myToken)")
+        if diff == "1" and typ == "Multiple choice": 
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple&token=myToken")
+            print("Changed difficulty level to easy!")
+        elif diff == "2" and typ == "Multiple choice":
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple&token=myToken")
+            print("Changed difficulty level to medium and type to True/False!")
+        elif diff == "3" and typ == "Multiple choice":
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple&token=myToken")
+            print("Changed difficulty level to hard and type to True/False!")
+        elif diff == "1" and typ == "True/False":
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean&token=myToken")
+            print("Changed difficulty level to easy and type to True/False!")
+        elif diff == "2" and typ == "True/False": 
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean&token=myToken")
+            print("Changed difficulty level to medium and type to True/False!")
+        elif diff == "3" and typ == "True/False":
+            response = requests.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean&token=myToken")
+            print("Changed difficulty level to hard and type to True/False!")
+        else: 
+            print("Invalid choice")
+        if response.status_code == 200: 
+            print("Request successful!")
+        else:
+            print("Request failed with status code ", response.status_code)
+        data = response.json()
+        questions =  data["results"]
+        for question in questions:
+            print("Question: ", question["question"])
+            print("Correct answer: ", question["correct_answer"])
+            print("Incorrect answers: ", question["incorrect_answers"])
+            print()
